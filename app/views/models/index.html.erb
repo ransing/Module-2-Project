@@ -1,0 +1,20 @@
+<h1>Model Booking</h1>
+
+<ul>
+<% @models.each do |model|%>
+<li>
+<%= link_to model.name, model_path(model) %>
+</li>
+</ul>
+<% end %>
+
+
+
+<style>
+ 
+ body {
+  background: rgb(128,128,128);
+  font-family: 'Open Sans', sans-serif;
+}
+
+</style>

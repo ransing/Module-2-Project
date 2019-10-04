@@ -1,0 +1,9 @@
+<h1>Designer Booking</h1>
+
+<ul>
+<% @designers.each do |designer|%>
+<li>
+<%= link_to designer.name, designer_path(designer) %>
+</li>
+</ul>
+<% end %>

@@ -1,0 +1,39 @@
+<% @events.each do |x| %>
+  <li><%= link_to x.name ,event_path(x)%>- <%= x.date %>- <%= x.location %> - <%= x.models.name %> --<%= x.designer.name %></li>
+
+<% end %>
+
+<hr>
+
+<% @events.each do |x| %>
+  <li><%= link_to x.name%>- <%= x.date %>- <%= x.location %> - <%= x.models.name %> --<%= x.designer.name %></li>
+<% end %>
+
+<hr>
+
+
+
+<hr>
+<li>
+<% @event_models.each do |x| %>
+  <li><%= x.event.name %><%= x.event.date %>- <%= x.event.location %> - <%= x.model.name %> --<%= x.event.designer.name %></li>
+
+  <%= link_to "edit event model", edit_event_model_path(x)%>
+  <%= link_to "edit event designer and details ", edit_event_path(x)%>
+  </li>
+
+<% end %>
+
+
+
+
+
+<style>
+ 
+ body {
+  background: rgb(128,128,128);
+  font-family: 'Open Sans', sans-serif;
+}
+
+</style>
+

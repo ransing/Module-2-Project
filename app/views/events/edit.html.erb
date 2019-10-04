@@ -1,0 +1,39 @@
+HI
+<h1></h1>
+<%= form_for @event do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :date %>
+<%= f.date_field :date %>
+
+<%= f.label :location %>
+<%= f.text_field :location %>
+  
+
+    <%= f.label :designer %>
+    <%= f.collection_select :designer_id, Designer.all, :id, :name, prompt: true %>
+
+
+
+<%= f.submit "edit Event" %>
+<% end %>
+
+<%#= link_to  "Edit model", edit_event_event_model_path(@event ) %>
+
+<% @eventmodel.each do |x| %>
+    <%= link_to "Edit #{x.model.name}", "/events/#{@event.id}/event_models/#{x.id}/edit" %>
+<% end %>
+
+
+
+
+<style>
+ 
+ body {
+  background: rgb(128,128,128);
+  font-family: 'Open Sans', sans-serif;
+}
+
+</style>

@@ -1,0 +1,30 @@
+
+<hr>
+
+<h2>Your events </h2>
+
+
+<% @user.events.each do |x| %>
+<%= x.location %>
+
+<li><%= link_to x.name, event_path(x) %></li>
+  
+<% end %>
+
+<hr>
+
+<%= button_to 'new event', new_event_path, method: :get %>
+<br>
+<%= button_to 'Logout', logout_path, method: :delete   %>
+
+
+
+
+<style>
+ 
+ body {
+  background: rgb(128,128,128);
+  font-family: 'Open Sans', sans-serif;
+}
+
+</style>

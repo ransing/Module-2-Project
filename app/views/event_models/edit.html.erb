@@ -1,0 +1,18 @@
+<h1>Hello</h1>
+
+<%= form_for @eventmodel do |f| %>
+  <%= f.label :model_id %>
+  <%= f.collection_select :model_id, Model.all, :id, :name, prompt: true %>
+
+<%= f.submit %>
+<% end %>
+
+
+<style>
+ 
+ body {
+  background: rgb(128,128,128);
+  font-family: 'Open Sans', sans-serif;
+}
+
+</style>

@@ -1,0 +1,37 @@
+
+  <li>Name:<%= @event.name %></li>
+  <li>Date: <%= @event.date %></li>
+  <li>Designer: <%= @event.designer.name %></li><br>
+<li>📍Location:<%= @event.location %>
+<hr>
+
+<%= link_to "Edit THIS event", edit_event_path(@event) %>
+
+
+
+<%= button_to "DESTROY THIS event❌", event_path(@event), method: :delete %>
+
+
+<% @event_models.each do |x| %>
+<%= x.name %>
+
+<% end %>
+
+<hr>
+
+<% @eventmodels.each do |x| %>
+<%=  link_to x.model.name, edit_event_event_model_path(@event,x)%> 
+  
+<% end %>
+
+
+
+
+<style>
+ 
+ body {
+  background: rgb(128,128,128);
+  font-family: 'Open Sans', sans-serif;
+}
+
+</style>

@@ -1,0 +1,55 @@
+<div class="container">
+
+<%= render "shared/heading", title: "Welcome" %>
+
+<%= form_for @user, html: { class: "form" } do |f| %>
+  <h4 class="form-header">Create account</h4>
+
+  <div class="form-field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="form-field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+<div class="form-field">
+    <%= f.label :gender %>
+    <%= f.text_field :gender%>
+  </div>
+
+  <div class="form-field">
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+  </div>
+
+
+  <% if flash[:errors] %>
+    <ul>
+      <% flash[:errors].each do |error| %>
+        <li class="error"><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="form-field">
+    <%= f.submit class: "button" %>
+  </div>
+<% end %>
+
+
+</div>
+
+
+
+
+<style>
+ 
+ body {
+  background: rgb(128,128,128);
+  font-family: 'Open Sans', sans-serif;
+}
+
+</style>

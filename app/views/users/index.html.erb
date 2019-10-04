@@ -1,0 +1,25 @@
+<% @users.each do |user| %>
+  <%= user.username %>
+
+<% end %>
+
+
+<hr>
+
+
+<%= link_to 'View records ', event_path %>
+
+<hr>
+
+<%= link_to 'create event', new_event_path %>
+
+
+
+<style>
+ 
+ body {
+  background: rgb(128,128,128);
+  font-family: 'Open Sans', sans-serif;
+}
+
+</style>
