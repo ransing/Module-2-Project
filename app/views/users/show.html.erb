@@ -1,15 +1,7 @@
 
 <hr>
 
-<h2>Your events </h2>
-
-
-<% @user.events.each do |x| %>
-<%= x.location %>
-
-<li><%= link_to x.name, event_path(x) %></li>
-  
-<% end %>
+<center>
 
 <hr>
 
@@ -18,6 +10,42 @@
 <%= button_to 'Logout', logout_path, method: :delete   %>
 
 
+<br>
+
+<h1 style="font-size: 27px"><b>Here are your registered events  </b></h1>
+<br>
+
+<table class="Events">
+  <thead>
+    <tr>
+      <th>Name (click to edit) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+      <th>Location   .</th>
+      <th>Date       &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
+      <th>Designer name  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;       </th>
+      <th>Models</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |x| %>
+      <tr>
+        <td>
+          <%= link_to x.name, event_path(x) %>
+        </td>
+        <td><%= x.location %></td>
+        <td><%= x.date %></td>
+        <td><%= x.designer.name %></td>
+        <% x.models.each do |m| %>
+        <td><%= m.name %><td>
+        <% end %>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+</center>
 
 
 <style>

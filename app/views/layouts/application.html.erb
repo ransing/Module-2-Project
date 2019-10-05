@@ -15,13 +15,17 @@
 
   </head>
 
-  <body>
+  <body style="display: flex; justify-items: center; align-items: left; height: 100%; flex-direction: column;">
+
+    <nav style="background-color: black; width: 100%; padding-top: 1px; padding-bottom: 1px; align-self: start; top: 0; position: fixed;">
+      <div style="width: 100%; margin-left: auto; margin-right: auto;">
+        <span style="color:white">Invent the Runway<span>
+      </div>
+    </nav>
 
 
 
-
-
-    <%= yield %>
+    <div style="margin-top: 30px"><%= yield %></div>
   </body>
 </html>
 

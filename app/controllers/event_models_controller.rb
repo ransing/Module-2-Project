@@ -23,9 +23,15 @@ class EventModelsController < ApplicationController
     
 
     def create
+        byebug
+        @event = Event.find(params[:event_id])
         # byebug
-       @eventmodel =  EventModel.create(params.require(:event_model).permit(:event_id, :model_id))
-        redirect_to user_path(@current_user)
+        # @event.event_models.create(model_id: params[:event_model][:model_id])
+        EventModel.create(model_id: params[:event_model][:model_id], event_id: params[:event_id])
+    #    @eventmodel =  EventModel.create(params.require(:event_model).permit(:event_id, :model_id))
+        # redirect_to user_path(@current_user) 
+        redirect_to event_path(@event)
+        #event_path(params)
     end
 
     def edit
@@ -52,6 +58,14 @@ class EventModelsController < ApplicationController
         redirect_to event_path(@eventmodel.event)
     end
 
+    def destroy 
+        @eventmodel = EventModel.find(params[:id])
+        @event = Event.find(params[:id])
+        @eventmodel.destroy
+        redirect_to event_path(@eventmodel.event)
+    end 
+
+
     private 
 
     def find_event_model_id
@@ -61,8 +75,7 @@ class EventModelsController < ApplicationController
     end 
             
         
-
-
+   
 
 
 end

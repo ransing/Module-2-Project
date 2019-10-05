@@ -26,6 +26,8 @@ class EventsController < ApplicationController
         @event = Event.find(params[:id])
         @event_models = @event.models
         @eventmodels = @event.event_models
+
+        # @model = Model.new
         # byebug
     end 
 

@@ -1,28 +1,43 @@
 
+  <center>
+  
+  
   <li>Name:<%= @event.name %></li>
   <li>Date: <%= @event.date %></li>
-  <li>Designer: <%= @event.designer.name %></li><br>
-<li>📍Location:<%= @event.location %>
-<hr>
-
-<%= link_to "Edit THIS event", edit_event_path(@event) %>
-
-
-
-<%= button_to "DESTROY THIS event❌", event_path(@event), method: :delete %>
-
-
-<% @event_models.each do |x| %>
-<%= x.name %>
-
-<% end %>
-
+  <li>Designer: <%= @event.designer.name %></li>
+<li> Location:<%= @event.location %>
 <hr>
 
 <% @eventmodels.each do |x| %>
-<%=  link_to x.model.name, edit_event_event_model_path(@event,x)%> 
+Click below to edit model <%=  button_to x.model.name, edit_event_event_model_path(@event,x), method: :get%> 
   
 <% end %>
+
+<br>
+
+
+
+
+
+<hr>
+
+<%= button_to 'Add more models', new_event_event_model_path(@event), method: :get%> 
+
+
+<br>
+
+<%= button_to "Edit THIS event", edit_event_path(@event), method: :get %>
+
+<br>
+
+
+
+<%= button_to "Delete event", event_path(@event), method: :delete %>
+
+
+</center>
+
+<hr>
 
 
 
